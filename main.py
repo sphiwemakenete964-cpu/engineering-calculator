@@ -9,6 +9,7 @@ def main():
         print("2. Electrical Power Calculator")
         print("3. About this project")
         print("4. Exit")
+        print("5. Voltage Divider Calculator")
 
         choice = input("Select an option: ")
 
