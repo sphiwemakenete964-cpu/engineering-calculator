@@ -5,29 +5,33 @@ print("3. Calculate power using voltage and resistance")
 
 choice = input("Choose an option: ")
 
-if choice == "1":
-    voltage = float(input("Enter voltage (V): "))
-    current = float(input("Enter current (A): "))
+try:
+    if choice == "1":
+        voltage = float(input("Enter voltage (V): "))
+        current = float(input("Enter current (A): "))
 
-    power = voltage * current
+        power = voltage * current
+        print("Power =", power, "W")
 
-    print("Power =", power, "W")
+    elif choice == "2":
+        current = float(input("Enter current (A): "))
+        resistance = float(input("Enter resistance (Ohms): "))
 
-elif choice == "2":
-    current = float(input("Enter current (A): "))
-    resistance = float(input("Enter resistance (Ohms): "))
+        power = current ** 2 * resistance
+        print("Power =", power, "W")
 
-    power = current ** 2 * resistance
+    elif choice == "3":
+        voltage = float(input("Enter voltage (V): "))
+        resistance = float(input("Enter resistance (Ohms): "))
 
-    print("Power =", power, "W")
+        if resistance == 0:
+            print("Error: Resistance cannot be zero.")
+        else:
+            power = voltage ** 2 / resistance
+            print("Power =", power, "W")
 
-elif choice == "3":
-    voltage = float(input("Enter voltage (V): "))
-    resistance = float(input("Enter resistance (Ohms): "))
+    else:
+        print("Invalid option.")
 
-    power = voltage ** 2 / resistance
-
-    print("Power =", power, "W")
-
-else:
-    print("Invalid option")
+except ValueError:
+    print("Error: Please enter numerical values.")
