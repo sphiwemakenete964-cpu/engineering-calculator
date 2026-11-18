@@ -4,10 +4,11 @@ from power_calculator import power_calculator
 
 def main():
     while True:
-        print("\n===== ENGINEERING TOOLKIT =====")
+        print("\n===== SPHIWE'S ENGINEERING TOOLKIT =====")
         print("1. Ohm's Law Calculator")
         print("2. Electrical Power Calculator")
-        print("3. Exit")
+        print("3. About this project")
+        print("4. Exit")
 
         choice = input("Select an option: ")
 
@@ -18,6 +19,11 @@ def main():
             power_calculator()
 
         elif choice == "3":
+            print("\nAbout this project:")
+            print("A Python toolkit for electrical calculations.")
+            print("Created by Sphiwe.")
+
+        elif choice == "4":
             print("Exiting Engineering Toolkit.")
             break
 
