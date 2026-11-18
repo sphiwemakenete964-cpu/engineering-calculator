@@ -1,5 +1,6 @@
 from ohms_law import ohms_law_calculator
 from power_calculator import power_calculator
+from voltage_divider import voltage_divider_calculator
 
 
 def main():
@@ -8,8 +9,9 @@ def main():
         print("1. Ohm's Law Calculator")
         print("2. Electrical Power Calculator")
         print("3. About this project")
-        print("4. Exit")
-        print("5. Voltage Divider Calculator")
+        print("4. Voltage Divider Calculator")
+        print("5. Exit")
+        
 
         choice = input("Select an option: ")
 
@@ -25,6 +27,9 @@ def main():
             print("Created by Sphiwe.")
 
         elif choice == "4":
+            voltage_divider_calculator()
+            
+        elif choice == "5":
             print("Exiting Engineering Toolkit.")
             break
 
