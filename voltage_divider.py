@@ -1,3 +1,9 @@
+def calculate_voltage_divider(vin, r1, r2):
+    if r1 + r2 == 0:
+        raise ValueError("Total resistance cannot be zero.")
+
+    return vin * (r2 / (r1 + r2))
+
 def voltage_divider_calculator():
     print("\n=== Voltage Divider Calculator ===")
 
@@ -9,12 +15,11 @@ def voltage_divider_calculator():
         if r1 + r2 == 0:
             print("Error: Total resistance cannot be zero.")
         else:
-            vout = vin * (r2 / (r1 + r2))
+            vout = calculate_voltage_divider(vin, r1, r2)
             print("Output voltage =", vout, "V")
 
     except ValueError:
         print("Error: Please enter numerical values.")
-
 
 if __name__ == "__main__":
     voltage_divider_calculator()

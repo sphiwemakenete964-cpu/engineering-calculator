@@ -1,3 +1,16 @@
+def calculate_power_vi(voltage, current):
+    return voltage * current
+
+
+def calculate_power_ir(current, resistance):
+    return current ** 2 * resistance
+
+
+def calculate_power_vr(voltage, resistance):
+    if resistance == 0:
+        raise ValueError("Resistance cannot be zero.")
+    return voltage ** 2 / resistance
+
 def power_calculator():
     print("\n=== Electrical Power Calculator ===")
     print("1. Calculate power using voltage and current")
@@ -11,25 +24,22 @@ def power_calculator():
             voltage = float(input("Enter voltage (V): "))
             current = float(input("Enter current (A): "))
 
-            power = voltage * current
+            power = calculate_power_vi(voltage, current)
             print("Power =", power, "W")
 
         elif choice == "2":
             current = float(input("Enter current (A): "))
             resistance = float(input("Enter resistance (Ohms): "))
 
-            power = current ** 2 * resistance
+            power = calculate_power_ir(current, resistance)
             print("Power =", power, "W")
 
         elif choice == "3":
             voltage = float(input("Enter voltage (V): "))
             resistance = float(input("Enter resistance (Ohms): "))
 
-            if resistance == 0:
-                print("Error: Resistance cannot be zero.")
-            else:
-                power = voltage ** 2 / resistance
-                print("Power =", power, "W")
+            power = calculate_power_vr(voltage, resistance)
+            print("Power =", power, "W")
 
         else:
             print("Invalid option.")
